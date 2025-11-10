@@ -3,8 +3,11 @@ pipeline {
     agent any
 
     tools {
-        // Most már a helyes névvel hivatkozunk a Maven telepítésre!
-        maven 'maven-3.9.11'
+        // Itt hivatkozunk a Jenkins Global Tool Configuration-ben megadott Maven telepítésre.
+        maven 'maven-3.9.11' // A te Maven konfigurációd neve
+        // Itt hivatkozunk a Jenkins Global Tool Configuration-ben megadott JDK telepítésre.
+        // Most már a helyes, átnevezett 'JDK_21' nevet használjuk!
+        jdk 'JDK_21' // <-- Ez az új sor, az átnevezett JDK neveddel!
     }
 
     stages {
